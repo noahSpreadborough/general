@@ -5,6 +5,8 @@
     <color name="colorAccent">#03DAC5</color>
     <color name="white">#FFFFFF</color>
     <color name="magenta">#FF09FF</color>
-    <color name="player">#FF0000</color>
+    <color name="maroon">#A8050A</color>
+    <color name="player">#6759E8</color>
+    <color name="enemy">#7C9350</color>
 
 </resources>
