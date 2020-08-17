@@ -8,5 +8,9 @@
     <color name="maroon">#A8050A</color>
     <color name="player">#6759E8</color>
     <color name="enemy">#7C9350</color>
+    <color name="spell">#FF9400</color>
+    <color name="healthBarBorder">#7E3D45</color>
+    <color name="healthBar">#FF001F</color>
+    <color name="gameOver">#D10C4A</color>
 
 </resources>

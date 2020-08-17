@@ -12,9 +12,9 @@ import com.example.a2dgamedevelopment.R;
  * The Enemy class is an extension of a Circle, which is an extension of a GameObject
  */
 public class Enemy extends Circle {
-    private static final double SPEED_PIXELS_PER_SECOND = Player.SPEED_PIXELS_PER_SECOND*0.6;
+    private static final double SPEED_PIXELS_PER_SECOND = Player.SPEED_PIXELS_PER_SECOND*0.4; // was 0.6
     private static final double MAX_SPEED = SPEED_PIXELS_PER_SECOND / GameLoop.MAX_UPS;
-    private static final double SPAWNS_PER_MINUTE = 20;
+    private static final double SPAWNS_PER_MINUTE = 60;
     private static final double SPAWNS_PER_SECOND = SPAWNS_PER_MINUTE/60.0;
     private static final double UPDATES_PER_SPAWN = GameLoop.MAX_UPS/SPAWNS_PER_SECOND;
     private static double updatesUntilNextSpawn = UPDATES_PER_SPAWN;
@@ -30,7 +30,7 @@ public class Enemy extends Circle {
         super(
             context,
             ContextCompat.getColor(context, R.color.enemy),
-            Math.random()*1000,
+            Math.random()*2000,
             Math.random()*1000,
             30
         );
@@ -69,7 +69,7 @@ public class Enemy extends Circle {
         double directionY = distanceToPlayerY/distanceToPlayer;
 
         // Set velocity in the direction to the player
-        if (distanceToPlayer > 0) { // Avoid division by zero
+        if (distanceToPlayer > 1) { // Avoid division by zero (65-70 would stop at edge of player
             velocityX = directionX*MAX_SPEED;
             velocityY = directionY*MAX_SPEED;
         } else {
